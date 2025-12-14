@@ -153,21 +153,7 @@ const FAQ = () => {
             ))}
           </div>
 
-          {/* CTA Section */}
-          <div className="mt-16 p-8 bg-gradient-to-r from-amber-50 to-lime-50 border border-amber-100 rounded-xl text-center">
-            <h3 className="text-2xl font-bold text-gray-900 mb-3">
-              {faqData.ctaSection.title}
-            </h3>
-            <p className="text-gray-600 mb-6">
-              {faqData.ctaSection.description}
-            </p>
-            <a
-              href={faqData.ctaSection.button.href}
-              className="inline-flex items-center justify-center bg-amber-500 hover:bg-amber-600 text-white font-semibold px-6 py-3 rounded-lg transition-colors shadow-sm hover:shadow"
-            >
-              {faqData.ctaSection.button.label}
-            </a>
-          </div>
+          
         </div>
       </div>
     </section>
@@ -175,3 +161,4 @@ const FAQ = () => {
 };
 
 export default FAQ;
+

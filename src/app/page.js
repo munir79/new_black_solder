@@ -1,4 +1,4 @@
-import ContactForm from "@/component/contact/ContactFormy";
+import ContactForm from "@/component/contact/ContactForm";
 import FAQ from "@/component/faq/FAQ";
 import FeatureSection from "@/component/feature/FeatureSection";
 import Hero from "@/component/hero/Hero";
@@ -21,15 +21,16 @@ export default function Home() {
     <Solutions/>
    </div>
    <div>
-    <Service/>
+    {/* <Service/> */}
+     <Products/>
    </div>
     <Solutions2/>
    <div>
     {/* <FeatureSection/> */}
    </div>
-    {/* <Service/> */}
-    <Products/>
-    {/* <ContactForm/> */}
+    <Service/>
+    {/* <Products/> */}
+    <ContactForm/>
     {/* <FAQ/> */}
   </PublicLayOut>
  </div>

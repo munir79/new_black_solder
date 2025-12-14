@@ -55,9 +55,9 @@ const introductionData = {
   ],
   button: {
     label: "Discover More",
-    href: "/discover",
+    href: "/services",
   },
-  imageUrl: "/assets/solutions/sunn.png",
+  imageUrl: "/assets/solutions/two-young-asian-couple-farmers-working-in-vegetables-hydroponic-farm-with-happiness-.jpg",
 };
 
 // ==============================

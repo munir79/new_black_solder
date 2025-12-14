@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import ShareHeader from '../common/ShareHeader';
 import ReviewForm from '../common/ReviewForm';
+import { useParams } from 'next/navigation';
+import { useSingleProductQuery } from '@/redux/feature/productApi';
 
 // This is the data structure for the product page content
 const productData = {
@@ -59,8 +61,15 @@ const StarRating = ({ rating }) => {
 
 // Main Component
 const SinglePage = () => {
+  const params = useParams();
+  const id = params?.slug;
+  console.log("single id ",id);
+  
   const [activeTab, setActiveTab] = useState(productData.tabs[0].name);
   const activeTabContent = productData.tabs.find(tab => tab.name === activeTab).content;
+  
+  const {data:singleProduct}=useSingleProductQuery(id);
+  console.log("all data",singleProduct);
 
   // Placeholder for the single image from the original design
   // const productImage ='/public/assets/singlepage/download (2).jfif'; 

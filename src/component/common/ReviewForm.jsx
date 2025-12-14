@@ -31,30 +31,30 @@ const ReviewForm = () => {
             <textarea
               placeholder="Your Message"
               rows="5"
-              className="w-full p-3 border border-gray-300 rounded focus:border-green-500 focus:ring focus:ring-green-200 focus:ring-opacity-50 transition duration-150"
+              className="w-full text-black p-3 border border-gray-300 rounded focus:border-green-500 focus:ring focus:ring-green-200 focus:ring-opacity-50 transition duration-150"
             ></textarea>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <input
                 type="text"
                 placeholder="Full Name"
-                className="p-3 border border-gray-300 rounded focus:border-green-500 focus:ring focus:ring-green-200 focus:ring-opacity-50"
+                className="p-3 border text-black border-gray-300 rounded focus:border-green-500 focus:ring focus:ring-green-200 focus:ring-opacity-50"
               />
               <input
                 type="text"
                 placeholder="Phone Number"
-                className="p-3 border border-gray-300 rounded focus:border-green-500 focus:ring focus:ring-green-200 focus:ring-opacity-50"
+                className="p-3 border text-black border-gray-300 rounded focus:border-green-500 focus:ring focus:ring-green-200 focus:ring-opacity-50"
               />
               <input
                 type="email"
                 placeholder="Email Address"
-                className="p-3 border border-gray-300 rounded focus:border-green-500 focus:ring focus:ring-green-200 focus:ring-opacity-50"
+                className="p-3 border text-black border-gray-300 rounded focus:border-green-500 focus:ring focus:ring-green-200 focus:ring-opacity-50"
               />
             </div>
 
             <button
               type="submit"
-              className="px-6 py-3 bg-green-600 text-white font-semibold rounded shadow-lg hover:bg-green-700 transition duration-150 transform hover:scale-[1.02]"
+              className="px-6 py-3  bg-green-600 text-white font-semibold rounded shadow-lg hover:bg-green-700 transition duration-150 transform hover:scale-[1.02]"
             >
               Post Comment
             </button>

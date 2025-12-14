@@ -51,9 +51,11 @@ const introductionData = {
   ],
   button: {
     label: "Discover More",
-    href: "/discover",
+    href: "/product",
   },
   imageUrl: "/assets/solutions/sun2.jpg",
+  imageUrl: "/assets/solutions/Gemini_Generated_Image_ua6ka8ua6ka8ua6k.png",
+  // imageUrl:'/assets/solutions/new sol/nw1.png',
 };
 
 

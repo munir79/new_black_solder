@@ -90,10 +90,12 @@ const socialMediaData = [
 
 const navLinksData = [
   { id: 1, label: 'Home', href: '/', isActive: true,  },// hasDropdown: false
-  { id: 2, label: 'About', href: '/about', isActive: false, },
   { id: 3, label: 'Services', href: '/services', isActive: false,  },
+    { id: 5, label: 'Products', href: '/product', isActive: false, },
   { id: 4, label: 'vision', href: '/vision', isActive: false,  },
-  { id: 5, label: 'Blog', href: '/blog', isActive: false, },
+
+    { id: 2, label: 'About', href: '/about', isActive: false, },
+
   { id: 6, label: 'Contact Us', href: '/contact', isActive: false,  },
 ];
 
