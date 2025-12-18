@@ -1,6 +1,6 @@
 
 "use client";
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 
@@ -120,120 +120,154 @@ const buttonHoverVariants = {
 // ==========================================
 
 const Hero = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  useEffect(() => {
+    // Preload the background image
+    const img = new Image();
+    img.src = '/assets/hero/pexels-quang-nguyen-vinh-222549-2132107.jpg';
+    img.onload = () => {
+      setImageLoaded(true);
+      // Small delay to ensure smooth transition
+      setTimeout(() => setIsLoaded(true), 50);
+    };
+    img.onerror = () => {
+      // If image fails to load, still show content
+      setImageLoaded(true);
+      setIsLoaded(true);
+    };
+  }, []);
+
   const backgroundStyle = {
     backgroundImage: `url('/assets/hero/pexels-quang-nguyen-vinh-222549-2132107.jpg')`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    backgroundColor: imageLoaded ? 'transparent' : '#0f172a', // slate-900 as fallback
   };
 
   return (
-    <motion.div
-      initial="hidden"
-      animate="visible"
-      variants={containerVariants}
-      className="relative min-h-screen flex items-center overflow-hidden"
+    <div 
+      className="relative min-h-screen flex items-center overflow-hidden bg-slate-900"
       style={backgroundStyle}
     >
-      {/* Gradient Overlay Left (darker) → Right (clear) */}
-      <motion.div 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        className="absolute inset-0 bg-linear-to-r from-slate-900/90 via-slate-900/50 to-slate-900/0"
-      />
-
-      {/* Content */}
-      <div className="relative w-full container mx-auto px-4 sm:px-6 md:px-10 lg:px-16 text-white py-20">
-        <motion.div 
+      {/* Content Container - Always present to prevent black flash */}
+      <div className={`absolute inset-0 transition-opacity duration-700 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
+        <motion.div
+          initial="hidden"
+          animate={isLoaded ? "visible" : "hidden"}
           variants={containerVariants}
-          className="max-w-4xl"
+          className="relative h-full w-full"
         >
-          {/* Tagline */}
-          <motion.p 
-            variants={fadeUpVariants}
-            className="text-[1px] sm:text-[10px] font-medium text-amber-400 uppercase tracking-widest mb-4"
-          >
-            {heroData.tagline}
-          </motion.p>
-
-          {/* Headline */}
-          <motion.h1 
-            variants={fadeUpVariants}
-            className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6"
-          >
-            Transform Today’s Challenges Into <br className="hidden sm:block" />
-            Tomorrow’s Opportunities
-          </motion.h1>
-
-          {/* Description */}
-          <motion.p 
-            variants={fadeUpVariants}
-            className="text-base sm:text-lg text-gray-300 mb-10 max-w-2xl"
-          >
-            {heroData.description}
-          </motion.p>
-
-          {/* Buttons */}
+          {/* Gradient Overlay Left (darker) → Right (clear) */}
           <motion.div 
-            variants={scaleInVariants}
-            className="flex flex-col sm:flex-row sm:space-x-6 space-y-4 sm:space-y-0"
-          >
-            {/* Primary Button */}
-            <motion.div
-              variants={fadeInVariants}
-              whileHover="hover"
-              whileTap="tap"
-            >
-            <div className='mt-3'>
-                <Link
-                href={heroData.buttonPrimary.href}
-                className="flex items-center space-x-2 bg-amber-400 hover:bg-amber-500 text-slate-900 text-base font-bold px-8 py-4 rounded-sm transition-colors duration-300 shadow-lg"
-              >
-                <motion.span
-                  variants={buttonHoverVariants}
-                  className="flex items-center space-x-2"
-                >
-                  <span>{heroData.buttonPrimary.label}</span>
-                  <ArrowRightIcon className="h-5 w-5" />
-                </motion.span>
-              </Link>
-            </div>
-            </motion.div>
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/50 to-slate-900/0"
+          />
 
-            {/* Secondary Button */}
-            <motion.div
-              variants={fadeInVariants}
-              whileHover="hover"
-              whileTap="tap"
+          {/* Content */}
+          <div className="relative w-full h-full container mx-auto px-4 sm:px-6 md:px-10 lg:px-16 text-white flex items-center py-20">
+            <motion.div 
+              variants={containerVariants}
+              className="max-w-4xl"
             >
-              <Link
-                href={heroData.buttonSecondary.href}
-                className="flex items-center space-x-3 mt-[7px] border-2 border-amber-400 hover:bg-amber-400 hover:text-slate-900 transition-colors duration-300 px-8 py-2 rounded-sm font-semibold"
+              {/* Tagline */}
+              <motion.p 
+                variants={fadeUpVariants}
+                className="text-[1px] sm:text-[10px] font-medium text-amber-400 uppercase tracking-widest mb-4"
               >
-                <motion.div 
-                  className="flex items-center space-x-3"
-                  variants={buttonHoverVariants}
+                {heroData.tagline}
+              </motion.p>
+
+              {/* Headline */}
+              <motion.h1 
+                variants={fadeUpVariants}
+                className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6"
+              >
+                Transform Today’s Challenges Into <br className="hidden sm:block" />
+                Tomorrow’s Opportunities
+              </motion.h1>
+
+              {/* Description */}
+              <motion.p 
+                variants={fadeUpVariants}
+                className="text-base sm:text-lg text-gray-300 mb-10 max-w-2xl"
+              >
+                {heroData.description}
+              </motion.p>
+
+              {/* Buttons */}
+              <motion.div 
+                variants={scaleInVariants}
+                className="flex flex-col sm:flex-row sm:space-x-6 space-y-4 sm:space-y-0"
+              >
+                {/* Primary Button */}
+                <motion.div
+                  variants={fadeInVariants}
+                  whileHover="hover"
+                  whileTap="tap"
                 >
-                  <div className="w-10 h-10 flex items-center justify-center rounded-full bg-amber-400 text-slate-900">
-                    <PlayIcon className="h-5 w-5 ml-0.5" />
+                  <div className='mt-3'>
+                    <Link
+                      href={heroData.buttonPrimary.href}
+                      className="flex items-center space-x-2 bg-amber-400 hover:bg-amber-500 text-slate-900 text-base font-bold px-8 py-4 rounded-sm transition-colors duration-300 shadow-lg"
+                    >
+                      <motion.span
+                        variants={buttonHoverVariants}
+                        className="flex items-center space-x-2"
+                      >
+                        <span>{heroData.buttonPrimary.label}</span>
+                        <ArrowRightIcon className="h-5 w-5" />
+                      </motion.span>
+                    </Link>
                   </div>
-                  <span className="text-base">{heroData.buttonSecondary.label}</span>
                 </motion.div>
-              </Link>
+
+                {/* Secondary Button */}
+                <motion.div
+                  variants={fadeInVariants}
+                  whileHover="hover"
+                  whileTap="tap"
+                >
+                  <Link
+                    href={heroData.buttonSecondary.href}
+                    className="flex items-center space-x-3 mt-[7px] border-2 border-amber-400 hover:bg-amber-400 hover:text-slate-900 transition-colors duration-300 px-8 py-2 rounded-sm font-semibold"
+                  >
+                    <motion.div 
+                      className="flex items-center space-x-3"
+                      variants={buttonHoverVariants}
+                    >
+                      <div className="w-10 h-10 flex items-center justify-center rounded-full bg-amber-400 text-slate-900">
+                        <PlayIcon className="h-5 w-5 ml-0.5" />
+                      </div>
+                      <span className="text-base">{heroData.buttonSecondary.label}</span>
+                    </motion.div>
+                  </Link>
+                </motion.div>
+              </motion.div>
             </motion.div>
-          </motion.div>
+          </div>
+
+          {/* Bottom Fade */}
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4, duration: 0.6 }}
+            className="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-slate-900 to-transparent"
+          />
         </motion.div>
       </div>
 
-      {/* Bottom Fade */}
-      <motion.div 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.4, duration: 0.6 }}
-        className="absolute bottom-0 left-0 w-full h-16 bg-linear-to-t from-slate-900 to-transparent"
-      />
-    </motion.div>
+      {/* Loading State - Hidden when loaded */}
+      <div className={`absolute inset-0 bg-slate-900 flex items-center justify-center transition-opacity duration-700 ${isLoaded ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
+        <div className="w-8 h-8 border-2 border-amber-400 border-t-transparent rounded-full animate-spin"></div>
+      </div>
+    </div>
   );
 };
 
 export default Hero;
+

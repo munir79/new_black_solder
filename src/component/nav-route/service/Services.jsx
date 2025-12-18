@@ -3,7 +3,7 @@ import ServicesHero from '@/component/hero/ServicesHero';
 import Service from '@/component/service/Service';
 import React from 'react';
 import AllService from './AllService';
-import ContactForm from '@/component/contact/ContactForm';
+import ContactForm from '@/component/common/ContactForm';
 
 const Services = () => {
   return (
@@ -17,8 +17,7 @@ const Services = () => {
         href="/services"
       />
       <AllService />
-      <ContactForm />
-      {/* <ContactForm backgroundImage="/assets/solutions/new sol/s22.png"/> */}
+                <ContactForm  backgroundImage={'/assets/vision/sunny_day.jpg'} />
     </div>
   );
 };

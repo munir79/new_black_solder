@@ -51,7 +51,7 @@ const formatProductForCard = (product, index) => {
     title: product.serviceName || product.tittle || 'Product',
     description: product.description || 'No description available',
     imageSrc: `${baseUriBackend}${product.image}`,
-    href: `/products/${product._id}`,
+    href: `/services/${product._id}`,
     index: index,
   };
 };
@@ -107,11 +107,11 @@ const Service = () => {
               best quality <span className={accentColor}>organic</span> products
             </motion.h2>
 
-            <motion.p className="text-gray-600 mt-4 max-w-2xl mx-auto" variants={textItemVariants}>
+            {/* <motion.p className="text-gray-600 mt-4 max-w-2xl mx-auto" variants={textItemVariants}>
               {totalProducts > 0
                 ? `Discover our collection of ${totalProducts} premium organic products`
                 : 'Discover our premium organic products collection'}
-            </motion.p>
+            </motion.p> */}
           </div>
 
           {isLoading && (

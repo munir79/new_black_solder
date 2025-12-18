@@ -22,3 +22,20 @@ export const GET_SINGLE_SERVICE = API_BASE_URL + 'service/get-single-service';
 export const UPDATE_SERVICE = API_BASE_URL + 'service/update-service';
 export const DELETE_SERVICE = API_BASE_URL + 'service/delete-service';
 
+
+// team 
+
+
+// Add these constants to your existing url.js file
+export const CREATE_TEAM_MEMBER =API_BASE_URL + 'teams/create-team-member';
+export const GET_TEAM_MEMBERS =API_BASE_URL + 'teams/get-team-members';
+export const GET_SINGLE_TEAM_MEMBER = API_BASE_URL +'teams/get-single-team-member';
+export const UPDATE_TEAM_MEMBER =API_BASE_URL + 'teams/update-team-member';
+export const DELETE_TEAM_MEMBER =API_BASE_URL + 'teams/delete-team-member';
+
+
+//contact
+
+export const CREATE_CONTACT =API_BASE_URL + 'contact/create-contact';
+export const GET_ALL_CONTACT =API_BASE_URL + 'contact/get-contact';
+export const DELETE_CONTACT =API_BASE_URL + 'contact/delete-contact';

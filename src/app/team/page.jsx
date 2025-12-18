@@ -1,12 +1,14 @@
 import ContactForm from '@/component/common/ContactForm';
 import PublicLayOut from '@/component/publicLayOut/PublicLayOut';
+import Team from '@/component/team/Team';
 import React from 'react';
 
 const page = () => {
     return (
         <div>
             <PublicLayOut>
-                <ContactForm  backgroundImage={'/assets/vision/sunny_day.jpg'} />
+                <Team/>
+                <ContactForm/>
             </PublicLayOut>
         </div>
     );

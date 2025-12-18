@@ -1,5 +1,7 @@
 
 
+
+
 'use client';
 
 import React, { useState, useEffect, useCallback } from 'react';
@@ -10,7 +12,7 @@ import { ProductCard } from '@/component/common/ProductCard';
 import { useGetServiceQuery } from '@/redux/feature/serviceApi';
 import { useGetProductsQuery } from '@/redux/feature/productApi';
 
-// --- Utility Components for Pagination (Unchanged, it is correct) ---
+// --- Utility Components for Pagination (Unchanged) ---
 
 /**
  * A simple Pagination component. For a real app, this should be in its own file.
@@ -135,8 +137,8 @@ const AllProducts = () => {
     // Check is redundant if API logic is correct, but good for safety
     if (newPage > 0 && newPage <= totalPages) {
       setPage(newPage);
-      // Scroll to top of the product section on page change for better UX
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      // REMOVED: window.scrollTo({ top: 0, behavior: 'smooth' });
+      // This will keep the user at their current scroll position
     }
   }, [totalPages]);
 

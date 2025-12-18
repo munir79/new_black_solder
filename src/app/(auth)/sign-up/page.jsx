@@ -27,7 +27,8 @@ const SignUp = () => {
   return (
    <div>
     <PublicLayOut>
-       <div className="max-w-sm w-full mx-auto text-center shadow-[0_0_250px_#000] p-16 rounded-lg bg-white dark:bg-gray-900 transition-colors">
+       {/* <div className="max-w-sm w-full mx-auto text-center shadow-[0_0_250px_#000] p-16 rounded-lg bg-white dark:bg-gray-900 transition-colors"> */}
+       <div className="max-w-sm w-full mx-auto text-center  p-16 rounded-lg ">
       {/* Logo */}
       <svg
         xmlns="http://www.w3.org/2000/svg"

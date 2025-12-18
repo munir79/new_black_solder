@@ -45,7 +45,8 @@ const LogIn = () => {
   return (
    <div>
     <PublicLayOut>
-       <div className="max-w-sm w-full mx-auto text-center shadow-[0_0_250px_#000] p-16 rounded-lg bg-white dark:bg-[#0f172a]">
+       <div className="max-w-sm w-full mx-auto text-center p-16 ">
+       {/* <div className="max-w-sm w-full mx-auto text-center shadow-[0_0_250px_#000] p-16 rounded-lg bg-white dark:bg-[#0f172a]"> */}
       {/* Logo */}
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -119,15 +120,15 @@ const LogIn = () => {
       </form>
 
       {/* Footer text */}
-      {/* <p className="text-sm text-gray-600 dark:text-gray-400">
+      <p className="text-sm text-gray-600 dark:text-gray-400">
         Don’t have an account?{" "}
         <Link
-          href="/signup"
+          href="/sign-up"
           className="text-[#378f7b] underline hover:text-black dark:hover:text-white"
         >
           Sign up
         </Link>
-      </p> */}
+      </p>
     </div>
     </PublicLayOut>
    </div>

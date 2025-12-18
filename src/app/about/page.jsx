@@ -1,7 +1,7 @@
 
 "use client";
+import ContactForm from '@/component/common/ContactForm';
 import Information from '@/component/common/Information';
-import ContactForm from '@/component/contact/ContactForm';
 import PublicLayOut from '@/component/publicLayOut/PublicLayOut';
 import { motion } from "framer-motion";
 
@@ -60,7 +60,7 @@ const page = () => {
         </div>
       </motion.div>
             <Information/>
-            <ContactForm/>
+                <ContactForm  backgroundImage={'/assets/vision/sunny_day.jpg'} />
            </PublicLayOut>
         </div>
     );

@@ -35,10 +35,11 @@ const DashboardSidebar = ({ isOpen, toggleSidebar }) => {
       <ul className="mt-8 space-y-4">
         {[
           { icon: <Home className="h-6 w-6" />, label: "HomePage", href: "/" },
-          { icon: <Flag className="h-6 w-6" />, label: "Heroes", href: "/dashboard" },
+          // { icon: <Flag className="h-6 w-6" />, label: "Heroes", href: "/dashboard" },
           { icon: <BarChart2 className="h-6 w-6" />, label: "Services", href: "/dashboard/services" },
           { icon: <User className="h-6 w-6" />, label: "Products", href: "/dashboard/products" },
-          { icon: <User className="h-6 w-6" />, label: "sustain", href: "/dashboard/sustain-ability" },
+          { icon: <User className="h-6 w-6" />, label: "Teams", href: "/dashboard/team" },
+          { icon: <User className="h-6 w-6" />, label: "Contact", href: "/dashboard/contact-list" },
         ].map((item, i) => (
           <li
             key={i}

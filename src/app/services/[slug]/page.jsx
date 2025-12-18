@@ -1,12 +1,12 @@
-import ContactForm from '@/component/common/ContactForm';
 import PublicLayOut from '@/component/publicLayOut/PublicLayOut';
+import SingleServicePage from '@/component/singlepage/SingleServicePage';
 import React from 'react';
 
 const page = () => {
     return (
         <div>
             <PublicLayOut>
-                <ContactForm  backgroundImage={'/assets/vision/sunny_day.jpg'} />
+                <SingleServicePage/>
             </PublicLayOut>
         </div>
     );

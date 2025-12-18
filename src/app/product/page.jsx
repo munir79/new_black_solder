@@ -1,4 +1,4 @@
-import ContactForm from '@/component/contact/ContactForm';
+import ContactForm from '@/component/common/ContactForm';
 import ServicesHero from '@/component/hero/ServicesHero';
 import AllProducts from '@/component/nav-route/AllProducts';
 import PublicLayOut from '@/component/publicLayOut/PublicLayOut';
@@ -18,7 +18,7 @@ const page = () => {
             href="/services"
           />
           <AllProducts />
-          <ContactForm />
+                <ContactForm  backgroundImage={'/assets/vision/sunny_day.jpg'} />
         </div>
       </PublicLayOut>
     </div>

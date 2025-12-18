@@ -14,6 +14,6 @@ export const ProtectedRoute = ({ children }) => {
       </div>
     );
   }
-  return <>{user?.role === "admin" ? children : router.replace("/login")}</>;
+  return <>{user?.role === "admin" ? children : router.replace("/sign-in")}</>;
 };
 

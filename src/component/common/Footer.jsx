@@ -71,9 +71,9 @@ const contactInfo = [
 ];
 
 const latestPosts = [
-  { id: 1, title: 'Nothing impossible to heart', date: '2 March, 2020', imageUrl: '/post-image-1.jpg' },
-  { id: 2, title: 'Hard work', date: '2 March, 2020', imageUrl: '/post-image-2.jpg' },
-  { id: 3, title: 'Nothing impossible to heart', date: '2 March, 2020', imageUrl: '/post-image-3.jpg' },
+  { id: 1, title: 'Nothing impossible to heart', date: '2 March, 2020', imageUrl: '/assets/vision/sunny_day.jpg' },
+  { id: 2, title: 'Hard work', date: '2 March, 2020', imageUrl: '/assets/hero/pexels-quang-nguyen-vinh-222549-2132107.jpg' },
+  { id: 3, title: 'Nothing impossible to heart', date: '2 March, 2020', imageUrl: '/assets/NEW/Greenhouse-agriculture_0.jpg' },
 ];
 
 const socialMediaFooter = [
@@ -203,7 +203,7 @@ const Footer = () => {
           
           {/* Copyright */}
           <p className="mb-3 md:mb-0">
-            Copyright © AgriGo 2023. All rights reserved
+            Copyright © black-solder 2025. All rights reserved
           </p>
 
           {/* Legal Links (Mapped Dynamically) */}

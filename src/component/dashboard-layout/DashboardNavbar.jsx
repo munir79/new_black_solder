@@ -9,12 +9,20 @@ const DashboardNavbar = () => {
   const { isDropdownOpen, setIsDropdownOpen, dropdownRef } = useClickOutside();
   const { user, setUser } = useAuth();
 
-  const handleLogout = () => {
-    localStorage.removeItem("userData");
-    setUser(null);
-    router.replace("/sign-in");
-  };
+  // const handleLogout = () => {
+  //   localStorage.removeItem("userData");
+  //   setUser(null);
+  //   router.replace("/sign-in");
+  // };
 
+   const handleLogout = () => {
+    if (typeof window !== 'undefined') {
+      localStorage.removeItem('token');
+      localStorage.removeItem('userData');
+      // Full page reload to "/"
+      window.location.href = '/';
+    }
+  };
   return (
     <div className="sticky top-0 flex items-center justify-end p-4 lg:ml-64 z-30">
       <div className="relative bg-gradient-to-br from-blue-100 to-purple-100 flex items-center gap-4 border-gray-950 border-2 p-1 rounded-full">
